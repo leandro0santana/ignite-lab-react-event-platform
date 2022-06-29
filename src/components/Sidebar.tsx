@@ -1,11 +1,14 @@
 import { useGetLessonsQuery } from "../graphql/generated";
 import { Lesson } from "./Lesson";
 
+import { useHeaderDrawer } from "../contexts/HeaderDrawerContext";
+
 export function Sidebar() {
   const { data } = useGetLessonsQuery();
+  const { isOpen } = useHeaderDrawer();
 
   return (
-    <aside className="w-[348px] bg-gray-700 p-6 border-l border-gray-600">
+    <aside className={isOpen ? "w-full bg-gray-700 p-6 border-l border-gray-600 md:w-[348px] md:block" : "w-full hidden bg-gray-700 p-6 border-l border-gray-600 md:w-[348px] md:block"}>
       <span className="font-bold text-2xl pb-6 mb-6 border-b border-gray-500 block">
         Conograma de aulas
       </span>

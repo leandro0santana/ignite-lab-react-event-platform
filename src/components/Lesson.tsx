@@ -3,6 +3,7 @@ import { format, isPast } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { CheckCircle, Lock } from 'phosphor-react';
 import { Link, useParams } from "react-router-dom";
+import { useHeaderDrawer } from "../contexts/HeaderDrawerContext";
 
 interface LessonProps {
   title: string
@@ -13,6 +14,7 @@ interface LessonProps {
 
 export function Lesson(props: LessonProps) {
   const { slug } = useParams<{ slug: string}>();
+  const { isOpen, setOpen } = useHeaderDrawer();
   
   const isLessonAvailable = isPast(props.availableAt);
   const availableAtFormat = format(props.availableAt, "EEEE' • 'd' de 'MMMM' • 'k'h'mm", {
@@ -22,11 +24,15 @@ export function Lesson(props: LessonProps) {
   const isActiveLesson = slug === props.slug;
 
   return (
-    <Link to={`/event/lesson/${props.slug}`} className={
-      classNames("group", {
-        "pointer-events-none": !isLessonAvailable
-      })
-    }>
+    <Link 
+      to={`/event/lesson/${props.slug}`} 
+      className={
+        classNames("group", {
+          "pointer-events-none": !isLessonAvailable
+        })
+      }
+      onClick={() => setOpen(isOpen)}
+    >
       <span className="text-gray-300">
         {availableAtFormat}
       </span>

@@ -25,11 +25,13 @@ export function Subscribe() {
 
   return (
     <div className="min-h h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center">
-      <div className="w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto">
-        <div className="max-w-[640px]">
-          <Logo />
+      <div className="w-full max-w-[1100px] flex flex-col items-center justify-between mt-20 mx-auto sm:flex sm:flex-row">
+        <div className="px-8 mb-10 max-w-[640px] md:px-0">
+          <div className="flex justify-center md:block">
+            <Logo />
+          </div>
 
-          <h1 className="mt-8 text-[2.5rem] leading-tight">
+          <h1 className="text-3xl mt-8 leading-tight md:text-[2.5rem]">
             Construa uma <strong className="text-blue-500">aplicação completa</strong>, do zero, com <strong className="text-blue-500">React</strong>
           </h1>
 
@@ -38,7 +40,7 @@ export function Subscribe() {
           </p>
         </div>
 
-        <div className="p-8 bg-gray-700 border border-gray-500 rounded">
+        <div className="w-full p-8 bg-gray-700 border border-gray-500 rounded md:w-auto">
           <strong className="text-2xl mb-6 block">
             Inscreva-se gratuitamente
           </strong>
@@ -68,7 +70,7 @@ export function Subscribe() {
         </div>
       </div>
 
-      <img src="/src/assets/code.png" className="mt-10" alt="Code" />
+      <img src="src/assets/code.png" className="mt-10" alt="Code" />
     </div>
   )
 }
