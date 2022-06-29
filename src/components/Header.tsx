@@ -1,6 +1,8 @@
 import { TextAlignJustify, X } from "phosphor-react";
-import { useHeaderDrawer } from "../contexts/HeaderDrawerContext";
+
 import { Logo } from "./Logo";
+
+import { useHeaderDrawer } from "../contexts/HeaderDrawerContext";
 
 export function Header() {
   const { isOpen, setOpen } = useHeaderDrawer();

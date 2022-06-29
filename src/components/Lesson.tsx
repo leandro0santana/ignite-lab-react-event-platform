@@ -3,6 +3,7 @@ import { format, isPast } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { CheckCircle, Lock } from 'phosphor-react';
 import { Link, useParams } from "react-router-dom";
+
 import { useHeaderDrawer } from "../contexts/HeaderDrawerContext";
 
 interface LessonProps {
@@ -31,7 +32,7 @@ export function Lesson(props: LessonProps) {
           "pointer-events-none": !isLessonAvailable
         })
       }
-      onClick={() => setOpen(isOpen)}
+      onClick={() => setOpen(true)}
     >
       <span className="text-gray-300">
         {availableAtFormat}

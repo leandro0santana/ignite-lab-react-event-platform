@@ -2,6 +2,7 @@ import { DefaultUi, Player, Youtube } from "@vime/react";
 import { CaretRight, DiscordLogo, FileArrowDown, Image, Lightning } from "phosphor-react";
 
 import '@vime/core/themes/default.css';
+
 import { useHeaderDrawer } from "../contexts/HeaderDrawerContext";
 import { useGetLessonBySlugQuery } from "../graphql/generated";
 
